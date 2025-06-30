@@ -1,7 +1,11 @@
-const env: EnvironmentVariables = {};
+import type {EnvironmentVariables} from "../../types.d.ts";
+import {configDotenv} from "dotenv";
 
-export function initEnv() {
-    env.PORT = process.env["PORT "] || 8080;
-}
+configDotenv();
 
-export {env};
+const env: EnvironmentVariables = {
+    PORT: process.env.PORT,
+    DATABASE_URL: process.env.DATABASE_URL!,
+};
+
+export default env;

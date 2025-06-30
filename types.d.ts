@@ -1,7 +1,8 @@
-import type {StatusCodes} from "http-status-codes/build/es/index.js";
+import type {StatusCodes} from "http-status-codes";
 
 type EnvironmentVariables = {
-    PORT?: string | 8080
+    PORT?: string
+    DATABASE_URL: string
 }
 
 type ResponseMessage<T = unknown> = {
